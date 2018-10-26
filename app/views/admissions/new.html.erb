@@ -1,0 +1,15 @@
+<h1> create admissions </h1>
+    <%= form_for @admissions do |a| %>
+        <p>
+            <%= a.label :name %> <br/>
+            <%= a.text_field :name %>
+        </p>
+        <p>
+            <%= a.label :description %> <br/>
+            <%= a.text_area :description %>
+        </p>
+        <p>
+            <%= a.submit %>
+        </p>
+
+    <% end%>
