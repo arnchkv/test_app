@@ -10,6 +10,10 @@
   </head>
 
   <body>
+    <% flash.each do |na, item| %>
+    <ul>
+      <li><%= item %></li>
+      <%end %>
     <%= yield %>
   </body>
 </html>

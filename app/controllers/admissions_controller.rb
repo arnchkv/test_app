@@ -6,16 +6,24 @@ class AdmissionsController < ApplicationController
     def create
         #render plain: params[:admission].inspect
         @admissions = Admission.new(admission_params)
-        @admissions.save
+        if @admissions.save
+                flash[:notice] = "admission done!"
+                redirect_to admissions_path(@admissions)
+        else
+                render 'new'
+        end
 
+end
+    
 
-    end
     private
         def admission_params
                 params.require(:admission).permit(:name, :description)
 
 
         end
-    
+        def show
+
+        end
 
 end 

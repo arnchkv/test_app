@@ -1,4 +1,12 @@
-<h1> create admissions </h1>
+<h1> <u>create admissions </u> </h1>
+    <% if @admissions.errors.any? %>
+        <h2> The following errors are: </h2>
+        <ul>
+            <% @admissions.errors.full_messages.each do |item| %>
+                <li><%= item %> </li>
+            <% end %>
+        </ul>
+    <%end%>
     <%= form_for @admissions do |a| %>
         <p>
             <%= a.label :name %> <br/>
