@@ -1,0 +1,9 @@
+<h2>yup, it's getting shown </h2>
+<p>
+   NAME: <%= @admissions.name %>
+</p>
+<p>
+    DESC: <%= @admissions.description %>
+</p>
+    <%= link_to "back to Admission", admissions_path %>
+    <%= link_to "Edit", edit_admission_path(@admissions) %>

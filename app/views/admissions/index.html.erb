@@ -1,0 +1,16 @@
+<h1><u>Listing all Admissions </u></h1>
+<%= link_to "create new admission", new_admission_path %> <br/><br/>
+<table>
+    <tr>
+        <th>NAME</th>
+        <th>DESCRIPTION</th>
+    </tr>
+    <% @admissions.each do |admit|%>
+    <tr>
+        <td><%=admit.name %></td>
+        <td><%=admit.description %></td>
+        <td><%= link_to "Edit", edit_admission_path(admit) %> </td>
+        <td><%= link_to "Show", admission_path(admit)%>
+    </tr>
+    <%end %>
+ </table>
