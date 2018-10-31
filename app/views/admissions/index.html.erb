@@ -9,8 +9,9 @@
     <tr>
         <td><%=admit.name %></td>
         <td><%=admit.description %></td>
-        <td><%= link_to "Edit", edit_admission_path(admit) %> </td>
-        <td><%= link_to "Show", admission_path(admit)%>
+        <td><%= link_to "edit", edit_admission_path(admit) %> </td>
+        <td><%= link_to "delete", admission_path(admit), method: :delete, data: { confirm: 'Are you sure?' } %>
+        <td><%= link_to "show", admission_path(admit) %>
     </tr>
     <%end %>
  </table>

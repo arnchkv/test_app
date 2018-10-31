@@ -1,24 +1,4 @@
 <h1> edit page</h1>
- <% if @admissions.errors.any? %>
-        <h2> The following errors are: </h2>
-        <ul>
-            <% @admissions.errors.full_messages.each do |item| %>
-                <li><%= item %> </li>
-            <% end %>
-        </ul>
-    <%end%>
-    <%= form_for @admissions do |a| %>
-        <p>
-            <%= a.label :name %> <br/>
-            <%= a.text_field :name %>
-        </p>
-        <p>
-            <%= a.label :description %> <br/>
-            <%= a.text_area :description %>
-        </p>
-        <p>
-            <%= a.submit %>
-        </p>
-
-    <% end%> 
-        <%= link_to "back to Admission", admissions_path %>
+ 
+<%= render 'form' %>
+    <%= link_to "back to Admission", admissions_path %>

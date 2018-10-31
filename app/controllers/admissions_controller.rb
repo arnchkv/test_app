@@ -1,4 +1,5 @@
 class AdmissionsController < ApplicationController
+        before_action :set_admission, only: [:edit, :show, :update, :destroy]
     def new
             @admissions = Admission.new
     end
@@ -15,15 +16,14 @@ class AdmissionsController < ApplicationController
 
         end
 
-        def edit
-                @admissions = Admission.find(params[:id])
+        def edit      
         end
 
         def show
-                @admissions = Admission.find(params[:id])
         end
+
         def update
-                @admissions = Admission.find(params[:id])
+                
                 if @admissions.update(admission_params)
                         flash[:notice] = "update successful"
                         redirect_to admission_path(@admissions)
@@ -34,6 +34,21 @@ class AdmissionsController < ApplicationController
         def index
                 @admissions = Admission.all
                  
+        end
+        
+        def destroy
+                
+                @admissions.destroy
+                flash[:notice] = "record was successfully deleted"
+
+
+
+                redirect_to admissions_path
+
+        end
+        
+        def set_admission
+                @admissions = Admission.find(params[:id])
         end
 
     private
