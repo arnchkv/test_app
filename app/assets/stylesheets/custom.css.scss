@@ -24,3 +24,34 @@ $navbar-default-bg:#46177c;
     background-size: cover;
     height: 400px;
 }
+
+.btn-xlarge {
+    font-size: 1.3em;
+    background-color: #376ec6;
+}
+footer{
+    margin-top: 40px;
+    padding-top: 5px;
+    border-top: 1px solid #46177c;
+    color: crimson;
+
+}
+
+footer a:hover {
+    color: #e0931f;
+    
+}
+footer small {
+   float: left; 
+}
+
+footer ul{
+    float: right;
+    list-style: none;
+}
+
+footer ul  li{
+    float: left;
+    margin-left: 15px;
+    
+}
