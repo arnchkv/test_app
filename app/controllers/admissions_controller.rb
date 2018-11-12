@@ -5,10 +5,10 @@ class AdmissionsController < ApplicationController
     end
     
     def create
-        #render plain: params[:admission].inspect
+        
         @admissions = Admission.new(admission_params)
                 if @admissions.save
-                        flash[:notice] = "admission done!"
+                        flash[:success] = "admission done!"
                         redirect_to admission_path(@admissions)
                 else
                 render 'new'
@@ -25,7 +25,7 @@ class AdmissionsController < ApplicationController
         def update
                 
                 if @admissions.update(admission_params)
-                        flash[:notice] = "update successful"
+                        flash[:success] = "update successful"
                         redirect_to admission_path(@admissions)
                 else
                         render 'edit'
@@ -39,7 +39,7 @@ class AdmissionsController < ApplicationController
         def destroy
                 
                 @admissions.destroy
-                flash[:notice] = "record was successfully deleted"
+                flash[:danger] = "record was successfully deleted"
 
 
 
