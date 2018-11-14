@@ -1,17 +1,20 @@
-<h1>Listing all Admissions</h1>
-<%= link_to "create new admission", new_admission_path %> <br/><br/>
-<table>
-    <tr>
-        <th>NAME</th>
-        <th>DESCRIPTION</th>
-    </tr>
-    <% @admissions.each do |admit|%>
-    <tr>
-        <td><%=admit.name %></td>
-        <td><%=admit.description %></td>
-        <td><%= link_to "edit", edit_admission_path(admit) %> </td>
-        <td><%= link_to "delete", admission_path(admit), method: :delete, data: { confirm: 'Are you sure?' } %>
-        <td><%= link_to "show", admission_path(admit) %>
-    </tr>
-    <%end %>
- </table>
+<h1 style = "text-align: center;">Listing all Admissions</h1>
+
+<% @admissions.each do |admit|%>
+    <div class = "row">
+        <div class = "col-xs-8 col-xs-offset-2">
+            <div class = "well well-lg">
+                <div class = "article-title">
+                    <%= link_to admit.name, admission_path(admit) %>
+                </div>
+                <div class = "article-body">
+                    <%= truncate(admit.description, length: 100) %>
+                </div>
+                     <div class = "article-actions">
+                        <%= link_to "Edit", edit_admission_path(admit), class: "btn btn-xs btn-primary" %>
+                        <%= link_to "Delete this admission", admission_path(admit), method: :delete, data: {confirm: 'are you sure?'}, class: "btn btn-xs btn-danger" %>
+                    </div>
+                </div>
+            </div>
+        </div>
+ <%end %>
