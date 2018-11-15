@@ -10,11 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_14_094935) do
+ActiveRecord::Schema.define(version: 2018_11_15_062217) do
 
   create_table "admissions", force: :cascade do |t|
     t.string "name"
     t.text "description"
+    t.integer "user_id"
   end
 
   create_table "users", force: :cascade do |t|
