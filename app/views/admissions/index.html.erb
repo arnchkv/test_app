@@ -7,8 +7,12 @@
                 <div class = "article-title">
                     <%= link_to admit.name, admission_path(admit) %>
                 </div>
+                <%= admit.created_at %>
                 <div class = "article-body">
                     <%= truncate(admit.description, length: 100) %>
+                     <small>Created by: <%= admit.user.username  if admit.user %>,
+                        <%= time_ago_in_words(admit.created_at) %> ago, last updated: <%= time_ago_in_words(admit.updated_at) %>
+                     </small>
                 </div>
                      <div class = "article-actions">
                         <%= link_to "Edit", edit_admission_path(admit), class: "btn btn-xs btn-primary" %>
