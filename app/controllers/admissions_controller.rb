@@ -7,6 +7,7 @@ class AdmissionsController < ApplicationController
     def create
         
         @admissions = Admission.new(admission_params)
+        @admissions.user = User.first
                 if @admissions.save
                         flash[:success] = "admission done!"
                         redirect_to admission_path(@admissions)
