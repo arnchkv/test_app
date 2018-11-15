@@ -3,6 +3,7 @@ class CreateAdmission < ActiveRecord::Migration[5.2]
     create_table :admissions do |t|
       t.string :name
       t.text :description
+      t.timestamps
     end
   end
 end

@@ -15,6 +15,8 @@ ActiveRecord::Schema.define(version: 2018_11_15_062217) do
   create_table "admissions", force: :cascade do |t|
     t.string "name"
     t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.integer "user_id"
   end
 
