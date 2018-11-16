@@ -11,7 +11,7 @@
                             <%= a.text_field :name, class: "form-control", placeholder: "Name of the student" , autofocus: true %>
                         </div>
                     </div>
-                </div>
+                
                 
                     <div class = "form-group">
                         <div class = "control-label col-sm-2">   
@@ -22,19 +22,21 @@
                         </div>
                     </div>
 
-                        <div class = "form-group">
-                            <div class = "col-sm-offset-2 col-sm-10 ">        
-                            <br />                
-                                <%= a.submit class: "btn btn-primary btn-lg" %>
-                                     
+                    <div class = "form-group">
+                        <div class = "col-sm-offset-2 col-sm-10 ">        
                                 
-                            </div>
+                            <%= a.submit class: "btn btn-primary btn-lg" %>
+                                    
+                            
                         </div>
-                        <div class = "form-group">
-                            <div class = "col-xs-4 col-xs-offset-5">
-                                 [ <%= link_to "back to admission", admissions_path %> ]
-                             </div> 
-                        </div>
-                <% end%>          
+                    </div>
+                    <% end%> 
+
+                    <div class = "form-group">
+                        <div class = "col-xs-4 col-xs-offset-4">
+                                [ <%= link_to "back to admission", admissions_path %> ]
+                        </div> 
+                    </div>
+                         
             </div>  
-        </div>   
+           
