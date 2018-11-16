@@ -1,0 +1,24 @@
+<% obj.each do |admit|%>
+    <div class = "row">
+        <div class = "col-xs-8 col-xs-offset-2">
+            <div class = "well well-lg">
+                <div class = "article-title">
+                    <%= link_to admit.name, admission_path(admit) %>
+                </div>
+                
+                <div class = "article-body">
+                    <%= truncate(admit.description, length: 100) %>
+                    <div class = "article-meta-details">
+                     <small>Created by: <%= admit.user.username  if admit.user %>,
+                        <%= time_ago_in_words(admit.created_at) %> ago, last updated: <%= time_ago_in_words(admit.updated_at) %>
+                     </small>
+                </div>
+                </div>
+                     <div class = "article-actions">
+                        <%= link_to "Edit", edit_admission_path(admit), class: "btn btn-xs btn-primary" %>
+                        <%= link_to "Delete this admission", admission_path(admit), method: :delete, data: {confirm: 'are you sure?'}, class: "btn btn-xs btn-danger" %>
+                    </div>
+                </div>
+            </div>
+        </div>
+ <%end %>
