@@ -20,9 +20,9 @@
             <%= simple_format(@admissions.description) %>
         <div class = "article-actions">
         <% if logged_in? && current_user = @admissions.user %>
-            <%= link_to "View all Admissions", admissions_path, class: "btn btn-xs btn-success" %> 
+            <%= link_to "View all Articles", admissions_path, class: "btn btn-xs btn-success" %> 
             <%= link_to "Edit", edit_admission_path(@admissions), class: "btn btn-xs btn-primary" %>
-            <%= link_to "Delete this admission", admission_path(@admissions), method: :delete, data: {confirm: 'are you sure?'}, class: "btn btn-xs btn-danger" %>
+            <%= link_to "Delete this Article", admission_path(@admissions), method: :delete, data: {confirm: 'are you sure?'}, class: "btn btn-xs btn-danger" %>
             <% end %>
         </div>
 </div>
