@@ -1,5 +1,7 @@
 class AdmissionsController < ApplicationController
         before_action :set_admission, only: [:edit, :show, :update, :destroy]
+        before_action :require_user, except: [:index, :show]
+        before_action :require_same_user, only: [:edit, :update, :destroy]
     def new
             @admissions = Admission.new
     end
@@ -58,6 +60,11 @@ class AdmissionsController < ApplicationController
 
 
         end
-       
+       def require_same_user
+                if current_user != @admissions.user
+                        flash[:danger] = "you can only edit or delete your own article"
+                        redirect_to root_path
+                end
+       end
 
 end 
