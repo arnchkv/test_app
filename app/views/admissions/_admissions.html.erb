@@ -14,7 +14,7 @@
                      </small>
                 </div>
                 </div>
-                <% if logged_in? && current_user == admit.user %>
+                <% if logged_in? && (current_user == admit.user || current_user.admin?) %>
                      <div class = "article-actions">
                         <%= link_to "Edit", edit_admission_path(admit), class: "btn btn-xs btn-primary" %>
                         <%= link_to "Delete this article", admission_path(admit), method: :delete, data: {confirm: 'are you sure?'}, class: "btn btn-xs btn-danger" %>

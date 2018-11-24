@@ -9,6 +9,9 @@
                     <li class = "article-title">
                     <li><%=link_to user.username, user_path(user) %> </li> 
                     <li><small><%= pluralize(user.admissions.count," articles") if user.admissions %></small></li>
+                    <% if logged_in? and current_user.admin? %>
+                        <li><%=link_to "Delete User", user_path(user), method: :destroy, data: {confirm: "are you sure?"} %> </li> 
+                    <% end %>
                 </div>
             </div>
         </ul>
