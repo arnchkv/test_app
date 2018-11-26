@@ -7,6 +7,8 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application' %>
+
   </head>
 
   <body>
@@ -14,6 +16,7 @@
     
     <%=  render 'layouts/navigation' %>    
     <div class = "container">
+      <%= react_component("HelloWorld", { greeting: "React is working" })%>
       <%= yield %>
       </div>
       <%= render 'layouts/footer' %>
